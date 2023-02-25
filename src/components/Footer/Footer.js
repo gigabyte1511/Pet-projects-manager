@@ -15,7 +15,7 @@ function Footer() {
         <Link href="https://github.com/gigabyte1511">GitHub</Link>
         {' '}
         <br />
-        Gabets Denis Nikolaevich
+        Gabets Denis Nikolaevich test
       </Typography>
     </Paper>
   )
