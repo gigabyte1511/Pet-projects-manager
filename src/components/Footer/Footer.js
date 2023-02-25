@@ -11,9 +11,11 @@ function Footer() {
       }}
       elevation={3}
     >
-      <Typography gutterBottom variant="p" component="div" padding={1} margin={0}>
-        <p>Габец Денис Николаевич</p>
-        <Link href="https://github.com/gigabyte1511">https://github.com/gigabyte1511</Link>
+      <Typography gutterBottom variant="h6" component="div" padding={1} margin={0}>
+        <Link href="https://github.com/gigabyte1511">GitHub</Link>
+        {' '}
+        <br />
+        Gabets Denis Nikolaevich
       </Typography>
     </Paper>
   )
