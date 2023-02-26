@@ -6,7 +6,6 @@ import { useMemo } from 'react'
 import { Outlet } from 'react-router-dom'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
-import Main from './components/Main/ProjectsGrid'
 import ProjectDetail from './components/ProjectDetail/ProjectDetail'
 import SiteDrawer from './components/Drawer/SiteDrawer'
 

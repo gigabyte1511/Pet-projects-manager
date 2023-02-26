@@ -3,7 +3,7 @@ import {
   Button, Card, CardActions, CardContent, CardMedia, Typography,
 } from '@mui/material'
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
 
 function ProjectCard({ headerText, imageUrl, text }) {
   const navigate = useNavigate()

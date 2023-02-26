@@ -11,8 +11,9 @@ import '@fontsource/roboto/500.css'
 import '@fontsource/roboto/700.css'
 import ProjectDetail from './components/ProjectDetail/ProjectDetail'
 import SiteDrawer from './components/Drawer/SiteDrawer'
-import ProjectsGrid from './components/Main/ProjectsGrid'
-import Main from './components/Preview/Main'
+
+import ProjectsGrid from './components/ProjectsGrid/ProjectsGrid'
+import Preview from './components/Preview/Preview'
 
 const router = createBrowserRouter([
   {
@@ -21,19 +22,16 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Main />,
+        element: <Preview />,
       },
       {
-        path: 'main',
+        path: 'projects',
         element: <ProjectsGrid />,
-      },
-      {
-        path: 'detail',
-        element: <ProjectDetail />,
-      },
-      {
-        path: 'drawer',
-        element: <SiteDrawer />,
+        children: [
+          {
+            path: 'detail',
+            element: <ProjectDetail />,
+          }],
       },
     ],
   },

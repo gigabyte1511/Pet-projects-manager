@@ -16,8 +16,9 @@ import ListItem from '@mui/material/ListItem'
 import ListItemButton from '@mui/material/ListItemButton'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
-import InboxIcon from '@mui/icons-material/MoveToInbox'
-import MailIcon from '@mui/icons-material/Mail'
+import HomeIcon from '@mui/icons-material/Home'
+import GridViewIcon from '@mui/icons-material/GridView'
+
 import { useNavigate } from 'react-router-dom'
 
 const drawerWidth = 240
@@ -113,6 +114,16 @@ export default function SiteDrawer({ component }) {
         open={open}
       >
         <DrawerHeader>
+          <Typography
+            variant="h6"
+            sx={{
+              textAlign: 'center',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+            }}
+          >
+            Меню
+          </Typography>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
@@ -122,15 +133,15 @@ export default function SiteDrawer({ component }) {
           <ListItem key="Главная" disablePadding>
             <ListItemButton onClick={() => navigate('/')}>
               <ListItemIcon>
-                <MailIcon />
+                <HomeIcon />
               </ListItemIcon>
               <ListItemText primary="Главная" />
             </ListItemButton>
           </ListItem>
           <ListItem key="Сетка проектов" disablePadding>
-            <ListItemButton onClick={() => navigate('main')}>
+            <ListItemButton onClick={() => navigate('projects')}>
               <ListItemIcon>
-                <MailIcon />
+                <GridViewIcon />
               </ListItemIcon>
               <ListItemText primary="Сетка проектов" />
             </ListItemButton>
