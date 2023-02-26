@@ -2,7 +2,7 @@ import { Box, Grid } from '@mui/material'
 import React from 'react'
 import ProjectCard from '../ProjectCard/ProjectCard'
 
-function Main() {
+function ProjectsGrid() {
   return (
     <Grid
       container
@@ -29,4 +29,4 @@ function Main() {
     </Grid>
   )
 }
-export default Main
+export default ProjectsGrid

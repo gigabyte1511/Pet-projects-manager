@@ -3,8 +3,10 @@ import {
   Button, Card, CardActions, CardContent, CardMedia, Typography,
 } from '@mui/material'
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function ProjectCard({ headerText, imageUrl, text }) {
+  const navigate = useNavigate()
   return (
     <Box
       display="flex"
@@ -27,7 +29,7 @@ function ProjectCard({ headerText, imageUrl, text }) {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Подробнее</Button>
+          <Button size="small" onClick={() => navigate('detail')}>Подробнее</Button>
         </CardActions>
       </Card>
     </Box>

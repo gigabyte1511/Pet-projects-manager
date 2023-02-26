@@ -22,7 +22,7 @@ function Header() {
           </IconButton>
           <ShoppingBag />
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
+            My Pet-projets manajer
           </Typography>
         </Toolbar>
       </AppBar>
