@@ -1,6 +1,5 @@
-import { Paper, Typography } from '@mui/material'
+import { Link, Paper, Typography } from '@mui/material'
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 function Preview() {
   return (
@@ -37,12 +36,10 @@ function Preview() {
           padding: 2,
         }}
       >
-        В боковом меню во вкладке &quot;Сетка проектов&quot; вы можете получить таблицу карточек с описанием моих проектов и непосредственно перейти на сайты проектов
-      </Typography>
-      <Typography variant="h6" component="div" padding={1} margin={0}>
-        <Link href="https://github.com/gigabyte1511">GitHub</Link>
+        В боковом меню во вкладке &quot;Сетка проектов&quot; вы можете получить таблицу карточек с описанием моих проектов и непосредственно выполнить к ним переход.
       </Typography>
     </Paper>
+
   )
 }
 

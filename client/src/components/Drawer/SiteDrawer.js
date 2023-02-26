@@ -18,8 +18,10 @@ import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import HomeIcon from '@mui/icons-material/Home'
 import GridViewIcon from '@mui/icons-material/GridView'
+import GitHubIcon from '@mui/icons-material/GitHub'
 
 import { useNavigate } from 'react-router-dom'
+import { Link } from '@mui/material'
 
 const drawerWidth = 240
 
@@ -85,19 +87,33 @@ export default function SiteDrawer({ component }) {
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar position="fixed" open={open}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{ mr: 2, ...(open && { display: 'none' }) }}
+        <Toolbar sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+        >
+          <Box sx={{
+            display: 'flex',
+            alignItems: 'center',
+          }}
           >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            My Pet-projects manager
-          </Typography>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              onClick={handleDrawerOpen}
+              edge="start"
+              sx={{ mr: 2, ...(open && { display: 'none' }) }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" noWrap component="div">
+              My Pet-projects manager
+            </Typography>
+          </Box>
+          <Link href="https://github.com/gigabyte1511/Pet-projects-manager" color="inherit">
+            <GitHubIcon />
+          </Link>
         </Toolbar>
       </AppBar>
       <Drawer
