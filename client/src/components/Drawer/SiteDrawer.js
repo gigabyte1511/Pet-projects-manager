@@ -21,7 +21,10 @@ import GridViewIcon from '@mui/icons-material/GridView'
 import GitHubIcon from '@mui/icons-material/GitHub'
 
 import { useNavigate } from 'react-router-dom'
-import { Link } from '@mui/material'
+import {
+  Autocomplete, FormControl, InputLabel, Link, MenuItem, Select, TextField,
+} from '@mui/material'
+import Footer from '../Footer/Footer'
 
 const drawerWidth = 240
 
@@ -83,6 +86,12 @@ export default function SiteDrawer({ component }) {
     setOpen(false)
   }
 
+  const [age, setAge] = React.useState('')
+
+  const handleChange = (event) => {
+    setAge(event.target.value)
+  }
+
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -111,7 +120,7 @@ export default function SiteDrawer({ component }) {
               My Pet-projects manager
             </Typography>
           </Box>
-          <Link href="https://github.com/gigabyte1511/Pet-projects-manager" color="inherit">
+          <Link href="https://github.com/gigabyte1511/Pet-projects-manager" color="inherit" target="_blank">
             <GitHubIcon />
           </Link>
         </Toolbar>
@@ -138,7 +147,7 @@ export default function SiteDrawer({ component }) {
               marginRight: 'auto',
             }}
           >
-            Меню
+            Menu
           </Typography>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
@@ -146,20 +155,25 @@ export default function SiteDrawer({ component }) {
         </DrawerHeader>
         <Divider />
         <List>
-          <ListItem key="Главная" disablePadding>
+          <ListItem key="Home page" disablePadding>
             <ListItemButton onClick={() => navigate('/')}>
               <ListItemIcon>
                 <HomeIcon />
               </ListItemIcon>
-              <ListItemText primary="Главная" />
+              <ListItemText primary="Home page" />
             </ListItemButton>
           </ListItem>
-          <ListItem key="Сетка проектов" disablePadding>
+          <ListItem
+            key="Project grid"
+            disablePadding
+          >
             <ListItemButton onClick={() => navigate('projects')}>
               <ListItemIcon>
                 <GridViewIcon />
               </ListItemIcon>
-              <ListItemText primary="Сетка проектов" />
+              <ListItemText primary="Project grid
+"
+              />
             </ListItemButton>
           </ListItem>
         </List>

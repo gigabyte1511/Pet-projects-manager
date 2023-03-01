@@ -11,32 +11,31 @@ function Preview() {
     >
       <Typography
         variant="h6"
-        component="div"
         sx={{
-          padding: 2,
+          padding: 1,
           textAlign: 'center',
         }}
       >
-        Добро пожаловать на демонстрационную страницу моих Pet-проектов
+        Welcome to the demo page of my Pet projects
+      </Typography>
+      <Typography
+        variant="subtitle2"
+        sx={{
+          padding: 1,
+          textAlign: 'center',
+        }}
+      >
+        The application was developed to familiarize employers with my developments as part of the educational process
       </Typography>
       <Typography
         variant="p"
         component="div"
         sx={{
           padding: 2,
-          textAlign: 'center',
         }}
       >
-        Приложение разработано с целью ознакомления работодателей с моими разработками в рамках учебного процесса
-      </Typography>
-      <Typography
-        variant="p"
-        component="div"
-        sx={{
-          padding: 2,
-        }}
-      >
-        В боковом меню во вкладке &quot;Сетка проектов&quot; вы можете получить таблицу карточек с описанием моих проектов и непосредственно выполнить к ним переход.
+
+        In the side menu in the &quot;Project Grid&quot; tab you can get a table of cards describing my projects and jump directly to them.
       </Typography>
     </Paper>
 
