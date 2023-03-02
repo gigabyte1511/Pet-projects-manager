@@ -18,8 +18,13 @@ import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import HomeIcon from '@mui/icons-material/Home'
 import GridViewIcon from '@mui/icons-material/GridView'
+import GitHubIcon from '@mui/icons-material/GitHub'
 
 import { useNavigate } from 'react-router-dom'
+import {
+  Autocomplete, FormControl, InputLabel, Link, MenuItem, Select, TextField,
+} from '@mui/material'
+import Footer from '../Footer/Footer'
 
 const drawerWidth = 240
 
@@ -81,23 +86,43 @@ export default function SiteDrawer({ component }) {
     setOpen(false)
   }
 
+  const [age, setAge] = React.useState('')
+
+  const handleChange = (event) => {
+    setAge(event.target.value)
+  }
+
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar position="fixed" open={open}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{ mr: 2, ...(open && { display: 'none' }) }}
+        <Toolbar sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+        >
+          <Box sx={{
+            display: 'flex',
+            alignItems: 'center',
+          }}
           >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            My Pet-projects manager
-          </Typography>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              onClick={handleDrawerOpen}
+              edge="start"
+              sx={{ mr: 2, ...(open && { display: 'none' }) }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" noWrap component="div">
+              My Pet-projects manager
+            </Typography>
+          </Box>
+          <Link href="https://github.com/gigabyte1511/Pet-projects-manager" color="inherit" target="_blank">
+            <GitHubIcon />
+          </Link>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -122,7 +147,7 @@ export default function SiteDrawer({ component }) {
               marginRight: 'auto',
             }}
           >
-            Меню
+            Menu
           </Typography>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
@@ -130,20 +155,25 @@ export default function SiteDrawer({ component }) {
         </DrawerHeader>
         <Divider />
         <List>
-          <ListItem key="Главная" disablePadding>
+          <ListItem key="Home page" disablePadding>
             <ListItemButton onClick={() => navigate('/')}>
               <ListItemIcon>
                 <HomeIcon />
               </ListItemIcon>
-              <ListItemText primary="Главная" />
+              <ListItemText primary="Home page" />
             </ListItemButton>
           </ListItem>
-          <ListItem key="Сетка проектов" disablePadding>
+          <ListItem
+            key="Project grid"
+            disablePadding
+          >
             <ListItemButton onClick={() => navigate('projects')}>
               <ListItemIcon>
                 <GridViewIcon />
               </ListItemIcon>
-              <ListItemText primary="Сетка проектов" />
+              <ListItemText primary="Project grid
+"
+              />
             </ListItemButton>
           </ListItem>
         </List>
