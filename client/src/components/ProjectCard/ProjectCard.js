@@ -50,7 +50,7 @@ function ProjectCard({
           <CardActions>
             <Button size="small" onClick={navigateToDetail}>More</Button>
           </CardActions>
-          <AvatarGroup>
+          <AvatarGroup max={8}>
             {technologyStack.map((elem) => <Avatar key={elem.url} sx={{ width: 30, height: 30, backgroundColor: 'white' }} alt="Trevor Henderson" src={elem.url} />)}
           </AvatarGroup>
         </Box>

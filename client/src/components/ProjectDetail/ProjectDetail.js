@@ -46,7 +46,7 @@ export default function BasicModal() {
     >
       <Card sx={style}>
         <CardMedia
-          sx={{ height: 500, width: 700 }}
+          sx={{ height: 500, width: 900 }}
           image={imageUrl}
           title="green iguana"
         />
