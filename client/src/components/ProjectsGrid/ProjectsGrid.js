@@ -1,11 +1,11 @@
 import { Box, Grid } from '@mui/material'
 import React from 'react'
-import { Outlet } from 'react-router-dom'
 import ProjectCard from '../ProjectCard/ProjectCard'
 import sbermyshop from './projectImage/sber-myshop.png'
 import greencorp from './projectImage/green-corp.png'
 import plantscontroller from './projectImage/plants-controller.png'
 import AlmatyBigLake from './projectImage/almaty-parallax.png'
+import { ImageCarousel } from '../ImageCarousel/ImageCarousel'
 
 function ProjectsGrid() {
   return (
@@ -20,11 +20,11 @@ function ProjectsGrid() {
         <Grid item xs={0}>
           <ProjectCard
             name="My Shop"
-            imageUrl={sbermyshop}
+            images={[sbermyshop, sbermyshop]}
             mainDiscription="SPA of a typical internet shop. It was developed during the educational process under the SBER-UNIVERSITY program."
             url="http://13.37.52.101:3001/"
             gitHubUrl="https://github.com/gigabyte1511/Sber-myShop"
-            discription="The project is a single-page application designed to display various goods and products received from the Back-end application of the educational platform. The interaction with the server is performed in accordance with the REST-API architecture. Implemented authorization on JWT tokens, the mechanism and pages for adding and displaying goods in the basket and in the list. Component styling is done with CSS Modules. Routing inside the application is implemented using the React-Router-Dom library, calls to the project API are provided by the TanStack Query library. Used Formik forms and Yup validation. The search bar has a debounce optimization. The Redux Tool Kit is used to access and store global variables."
+            discription="The project is a single-page application designed to display various goods and products received from the Back-end application of the educational platform. The interaction with the server is performed in accordance with the REST-API architecture. Implemented authorization on JWT tokens, the mechanism and pages for adding and displaying goods in the basket and in the list. Component styling is done with CSS Modules. Routing inside the application is implemented using the React-Router-Dom library, calls to the project API are provided by the TanStack Query library. Used Formik forms and Yup validation. The search bar has a debounce optimization. The Redux Tool Kit is used to access and store global variables.The project is a single-page application designed to display various goods and products received from the Back-end application of the educational platform. The interaction with the server is performed in accordance with the REST-API architecture. Implemented authorization on JWT tokens, the mechanism and pages for adding and displaying goods in the basket and in the list. Component styling is done with CSS Modules. Routing inside the application is implemented using the React-Router-Dom library, calls to the project API are provided by the TanStack Query library. Used Formik forms and Yup validation. The search bar has a debounce optimization. The Redux Tool Kit is used to access and store global variables.The project is a single-page application designed to display various goods and products received from the Back-end application of the educational platform. The interaction with the server is performed in accordance with the REST-API architecture. Implemented authorization on JWT tokens, the mechanism and pages for adding and displaying goods in the basket and in the list. Component styling is done with CSS Modules. Routing inside the application is implemented using the React-Router-Dom library, calls to the project API are provided by the TanStack Query library. Used Formik forms and Yup validation. The search bar has a debounce optimization. The Redux Tool Kit is used to access and store global variables."
             technologyStack={[
               { name: 'React', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png?20220125121207' },
               { name: 'TanStack Query', url: 'https://react-query-v3.tanstack.com/_next/static/images/emblem-light-628080660fddb35787ff6c77e97ca43e.svg' },
@@ -37,7 +37,7 @@ function ProjectsGrid() {
         <Grid item xs={0}>
           <ProjectCard
             name="Green corp landing"
-            imageUrl={greencorp}
+            images={[greencorp]}
             mainDiscription="Simple landing site. It was developed during the educational process under the SBER-UNIVERSITY program."
             url="https://gigabyte1511.github.io/green-corp-landing/"
             gitHubUrl="https://github.com/gigabyte1511/green-corp-landing"
@@ -52,7 +52,7 @@ function ProjectsGrid() {
         <Grid item xs={0}>
           <ProjectCard
             name="Plants controller"
-            imageUrl={plantscontroller}
+            images={[plantscontroller]}
             mainDiscription="SPA, it is a graphical interface designed to control the Plants controller system. Was designed to study IoT technology."
             url="https://gigabyte1511.github.io/PlantsController/"
             gitHubUrl="https://github.com/gigabyte1511/PlantsController"
@@ -71,7 +71,7 @@ function ProjectsGrid() {
         <Grid item xs={0}>
           <ProjectCard
             name="Big Almaty lake"
-            imageUrl={AlmatyBigLake}
+            images={[AlmatyBigLake]}
             mainDiscription="Single page landing to demonstrate the parallax effect"
             url="https://gigabyte1511.github.io/Parallax-effect/"
             gitHubUrl="https://github.com/gigabyte1511/Parallax-effect"
@@ -83,8 +83,7 @@ function ProjectsGrid() {
           />
         </Grid>
       </Grid>
-
-      <Outlet context={['test']} />
+      <ImageCarousel images={[sbermyshop]} />
     </>
   )
 }

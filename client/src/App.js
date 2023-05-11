@@ -4,9 +4,6 @@ import {
 } from '@mui/material'
 import { useMemo } from 'react'
 import { Outlet } from 'react-router-dom'
-import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer'
-import ProjectDetail from './components/ProjectDetail/ProjectDetail'
 import SiteDrawer from './components/Drawer/SiteDrawer'
 
 function App() {
