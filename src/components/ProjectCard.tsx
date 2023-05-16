@@ -14,7 +14,7 @@ function ProjectCard({
 }: ProjectInfo): JSX.Element {
   const [isOpen, setIsOpen] = useState(false)
   console.log('ProjectCard', images)
-  const navigateToDetail = () => {
+  const navigateToDetail = (): void => {
     setIsOpen(true)
   }
   return (

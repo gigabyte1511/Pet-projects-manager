@@ -1,9 +1,10 @@
 import * as React from 'react'
 import { styled, useTheme } from '@mui/material/styles'
+import { type DefaultTheme } from '@mui/system'
 import Box from '@mui/material/Box'
 import Drawer from '@mui/material/Drawer'
 import CssBaseline from '@mui/material/CssBaseline'
-import MuiAppBar from '@mui/material/AppBar'
+import MuiAppBar, { type AppBarProps as MuiAppBarProps } from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import List from '@mui/material/List'
 import Typography from '@mui/material/Typography'
@@ -21,15 +22,12 @@ import GridViewIcon from '@mui/icons-material/GridView'
 import GitHubIcon from '@mui/icons-material/GitHub'
 
 import { useNavigate } from 'react-router-dom'
-import {
-  Autocomplete, FormControl, InputLabel, Link, MenuItem, Select, TextField
-} from '@mui/material'
-import { ImageCarousel } from './ImageCarousel'
+import { Link } from '@mui/material'
 
 const drawerWidth = 240
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
-  ({ theme, open }) => ({
+  ({ theme, open }: { theme: DefaultTheme, open: boolean }) => ({
     flexGrow: 1,
     padding: theme.spacing(3),
     transition: theme.transitions.create('margin', {
@@ -47,9 +45,13 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
   })
 )
 
+interface AppBarProps extends MuiAppBarProps {
+  open?: boolean
+}
+
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open'
-})(({ theme, open }) => ({
+})<AppBarProps>(({ theme, open }) => ({
   transition: theme.transitions.create(['margin', 'width'], {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen
@@ -73,22 +75,22 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   justifyContent: 'flex-end'
 }))
 
-export default function SiteDrawer({ component }) {
+export default function SiteDrawer({ component }: { component: JSX.Element }): JSX.Element {
   const navigate = useNavigate()
   const theme = useTheme()
   const [open, setOpen] = React.useState(false)
 
-  const handleDrawerOpen = () => {
+  const handleDrawerOpen = (): void => {
     setOpen(true)
   }
 
-  const handleDrawerClose = () => {
+  const handleDrawerClose = (): void => {
     setOpen(false)
   }
 
   const [age, setAge] = React.useState('')
 
-  const handleChange = (event) => {
+  const handleChange = (event): void => {
     setAge(event.target.value)
   }
 
@@ -179,7 +181,7 @@ export default function SiteDrawer({ component }) {
         </List>
         <Divider />
       </Drawer>
-      <Main open={open}>
+      <Main theme={theme} open={open}>
         <DrawerHeader />
         {component}
       </Main>
