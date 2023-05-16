@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { styled, useTheme } from '@mui/material/styles'
-import { type DefaultTheme } from '@mui/system'
 import Box from '@mui/material/Box'
 import Drawer from '@mui/material/Drawer'
 import CssBaseline from '@mui/material/CssBaseline'
@@ -26,24 +25,24 @@ import { Link } from '@mui/material'
 
 const drawerWidth = 240
 
-const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
-  ({ theme, open }: { theme: DefaultTheme, open: boolean }) => ({
-    flexGrow: 1,
-    padding: theme.spacing(3),
+const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
+  open?: boolean
+}>(({ theme, open }) => ({
+  flexGrow: 1,
+  padding: theme.spacing(3),
+  transition: theme.transitions.create('margin', {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.leavingScreen
+  }),
+  marginLeft: `-${drawerWidth}px`,
+  ...(open && {
     transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen
     }),
-    marginLeft: `-${drawerWidth}px`,
-    ...(open && {
-      transition: theme.transitions.create('margin', {
-        easing: theme.transitions.easing.easeOut,
-        duration: theme.transitions.duration.enteringScreen
-      }),
-      marginLeft: 0
-    })
+    marginLeft: 0
   })
-)
+}))
 
 interface AppBarProps extends MuiAppBarProps {
   open?: boolean
@@ -87,13 +86,6 @@ export default function SiteDrawer({ component }: { component: JSX.Element }): J
   const handleDrawerClose = (): void => {
     setOpen(false)
   }
-
-  const [age, setAge] = React.useState('')
-
-  const handleChange = (event): void => {
-    setAge(event.target.value)
-  }
-
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -165,23 +157,18 @@ export default function SiteDrawer({ component }: { component: JSX.Element }): J
               <ListItemText primary="Home page" />
             </ListItemButton>
           </ListItem>
-          <ListItem
-            key="Project grid"
-            disablePadding
-          >
+          <ListItem key="Project grid" disablePadding>
             <ListItemButton onClick={() => { navigate('projects') }}>
               <ListItemIcon>
                 <GridViewIcon />
               </ListItemIcon>
-              <ListItemText primary="Project grid
-"
-              />
+              <ListItemText primary="Project grid" />
             </ListItemButton>
           </ListItem>
         </List>
         <Divider />
       </Drawer>
-      <Main theme={theme} open={open}>
+      <Main open={open}>
         <DrawerHeader />
         {component}
       </Main>
