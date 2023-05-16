@@ -13,10 +13,11 @@ const ProjectCard = styled(Card)({
   left: '50%',
   top: '5vw',
   transform: 'translate(-50%)',
-  boxShadow: 24,
+  boxShadow: '0 0 24px rgba(0, 0, 0, 0.5)',
   padding: 20,
   overflow: 'scroll'
 })
+
 const CarouselContainer = styled('div')({
   width: '50vw',
   marginLeft: 'auto',

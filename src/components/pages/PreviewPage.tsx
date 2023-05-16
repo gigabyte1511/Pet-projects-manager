@@ -28,7 +28,6 @@ export function PreviewPage(): JSX.Element {
           The application was developed to familiarize employers with my developments as part of the educational process
         </Typography>
         <Typography
-          variant="p"
           component="div"
           sx={{
             padding: 2
