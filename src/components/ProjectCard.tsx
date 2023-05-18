@@ -10,7 +10,7 @@ import ProjectDetail from './ProjectDetail'
 
 function ProjectCard({
   name, images, mainDiscription, projectURL, discription,
-  technologyStack, gitHubURL
+  technologyStack, gitHubURL, date
 }: ProjectInfo): JSX.Element {
   const [isOpen, setIsOpen] = useState(false)
   console.log('ProjectCard', images)
@@ -35,9 +35,18 @@ function ProjectCard({
             />
           </CardActionArea>
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              {name}
-            </Typography>
+            <Box sx={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center'
+            }}>
+              <Typography gutterBottom variant="h5" component="div" >
+                {name}
+              </Typography>
+              <Typography gutterBottom variant='body1' component="div" >
+                {date}
+              </Typography>
+            </Box>
             <Typography variant="body2" color="text.secondary">
               {mainDiscription}
             </Typography>
@@ -62,6 +71,7 @@ function ProjectCard({
           setIsOpen
         }}
         name={name}
+        date={date}
         images={images}
         mainDiscription={mainDiscription}
         projectURL={projectURL}
