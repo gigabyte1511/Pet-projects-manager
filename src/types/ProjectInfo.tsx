@@ -5,6 +5,7 @@ export interface TechnologyStack {
 
 export interface ProjectInfo {
     name: string
+    date: string
     images: string[]
     mainDiscription: string
     discription: string

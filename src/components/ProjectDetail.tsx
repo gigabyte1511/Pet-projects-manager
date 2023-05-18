@@ -32,7 +32,7 @@ interface Props extends ProjectInfo {
   }
 }
 export default function ProjectDetail({
-  openProp, name, images, mainDiscription, projectURL, discription, technologyStack, gitHubURL
+  openProp, name, images, mainDiscription, projectURL, discription, technologyStack, gitHubURL, date
 }: Props): JSX.Element {
   const handleClose = (): void => {
     openProp.setIsOpen(false)
@@ -50,9 +50,17 @@ export default function ProjectDetail({
           <ImageCarousel images={images} />
         </CarouselContainer>
         <Divider />
-        <Typography variant="h5">
-          {name}
-        </Typography>
+        <Box sx={{
+          display: 'flex',
+          justifyContent: 'space-between'
+        }}>
+          <Typography variant="h5">
+            {name}
+          </Typography>
+          <Typography variant="body1">
+            {date}
+          </Typography>
+        </Box>
         <Typography variant="subtitle2" color="text.secondary">
           {mainDiscription}
         </Typography>
