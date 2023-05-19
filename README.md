@@ -13,4 +13,4 @@ Based on React library of MUI components.
 * Yup 
 * React slick
 
-## [Go](https://di-lawyer-landing-9wqp4nsyh-gigabyte1511.vercel.app/ "Необязательная подсказка") to the Versel environments to see one of the versions of the application
+## [Go](https://pet-projects-manager-2v2yo5gru-gigabyte1511.vercel.app/ "Необязательная подсказка") to the Versel environments to see one of the versions of the application
