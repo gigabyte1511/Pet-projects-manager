@@ -150,7 +150,7 @@ export default function SiteDrawer({ component }: { component: JSX.Element }): J
         <Divider />
         <List>
           <ListItem key="Home page" disablePadding>
-            <ListItemButton onClick={() => { navigate('/') }}>
+            <ListItemButton onClick={() => { navigate('/home') }}>
               <ListItemIcon>
                 <HomeIcon />
               </ListItemIcon>
@@ -158,7 +158,7 @@ export default function SiteDrawer({ component }: { component: JSX.Element }): J
             </ListItemButton>
           </ListItem>
           <ListItem key="Project grid" disablePadding>
-            <ListItemButton onClick={() => { navigate('projects') }}>
+            <ListItemButton onClick={() => { navigate('/') }}>
               <ListItemIcon>
                 <GridViewIcon />
               </ListItemIcon>
