@@ -125,7 +125,7 @@ export function ProjectsPage(): JSX.Element {
             date="02.05.2023"
             images={[myiot_admin_main, myiot_admin_1]}
             mainDiscription="Панель управления IOT устройствами и аналитики данных"
-            projectURL="https://gigabyte1511.github.io/PlantsController/"
+            projectURL="https://my-iot-admin-9kj1upkui-gigabyte1511.vercel.app"
             gitHubURL="https://github.com/gigabyte1511/MyIOT_admin_MUI"
             discription="Представляет собой SPA, слущащее для отображения, анализа и редактирования данных, полученных от устройств интернет вещей. Графики реализованы при помощи бибилиотеки ChartJS. Данные предоставляются серверным node.js приложением, которое принимает показания от IOT-устройств, выполняет их валидацию и сохраняет в удаленой SQL базе данных. Подробнее можете узнать GitHub репозитории проекта."
             technologyStack={[
@@ -144,7 +144,7 @@ export function ProjectsPage(): JSX.Element {
             date="24.03.2023"
             images={[whereto]}
             mainDiscription="Приложение для отображение музыкальных альбомов сервиса SubSonic"
-            projectURL="http://13.37.52.101:3051"
+            projectURL="https://my-iot-admin-9kj1upkui-gigabyte1511.vercel.app/"
             gitHubURL="https://github.com/gigabyte1511/MyIOT_admin_MUI"
             discription="Представляет собой одностраничное веб-приложение, слущащее для отображения музыкальных альбомов в виде бесконечной карусели и сожержащих их музыкальных композиций. Данные о музыкальных альбомах приложение получает от API Subsonic. Карусель изображений реализована при помощи стандартых React-интструментов без использования сторонних бибилиотек скролов и анимаций."
             technologyStack={[
