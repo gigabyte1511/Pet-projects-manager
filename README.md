@@ -12,5 +12,6 @@ Based on React library of MUI components.
 * Formik
 * Yup 
 * React slick
+* Material UI
 
 ## [Go](https://pet-projects-manager-2v2yo5gru-gigabyte1511.vercel.app/ "Необязательная подсказка") to the Versel environments to see one of the versions of the application
